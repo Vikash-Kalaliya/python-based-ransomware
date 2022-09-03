@@ -18,7 +18,7 @@ def decrypt(key):
             for byte in data:
                 xor_byte =byte^ord(key[key_index])
                 with open(file ,'ab') as f:
-                    f.write(xor_byte.to_bytes(1, 'litle'))
+                    f.write(xor_byte.to_bytes(1, 'little'))
                 #Increment key index
                 if key_index >= max_key_index:
                     key_index=0
